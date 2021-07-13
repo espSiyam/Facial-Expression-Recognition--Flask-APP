@@ -1,5 +1,6 @@
 import os
 import cv2
+import tensorflow
 from flask import Flask, render_template, request, send_from_directory
 from keras.preprocessing.image import img_to_array
 from keras.models import load_model
@@ -21,7 +22,7 @@ def predict(fullpath):
         cv2.rectangle(image, (x, y), (x+w, y+h),(0, 0, 255), 2)      
         faces = image[y:y + h, x:x + w]
 
-    test_image = faces.copy()
+    test_image = faces
     test_image = cv2.resize(test_image, (48, 48), interpolation = cv2.INTER_LINEAR)
     test_image = cv2.cvtColor(test_image, cv2.COLOR_BGR2GRAY)
     test_image = img_to_array(test_image)
@@ -54,17 +55,17 @@ def upload_file():
         print("*********result is: *******************",result)
         if result==0:
             label=("Angry")
-        if result==1:
+        elif result==1:
             label=("Disgust")
-        if result==2:
+        elif result==2:
             label=("Fear")
-        if result==3:
+        elif result==3:
             label=("Happy")
-        if result==4:
+        elif result==4:
             label=("Neutral")
-        if result==5:
+        elif result==5:
             label=("Sad")
-        if result==6:
+        else :
             label=("Surprice")
 
         accuracy = predictions[result]
