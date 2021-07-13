@@ -1,1 +1,3 @@
-<img align="center" src="output.gif" alt="Video Demo" />
+<p align="center">
+  <img width="800" height="500" src="output.gif">
+</p>
