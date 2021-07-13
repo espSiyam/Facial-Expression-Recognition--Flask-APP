@@ -1,1 +1,1 @@
-![Demo Video](output.gif)
+<img align="center" src="output.gif" alt="Video Demo" />
