@@ -1,3 +1,4 @@
+python=3.8
 click==8.0.1
 colorama==0.4.4
 Flask==2.0.1
@@ -12,4 +13,4 @@ scipy==1.6.3
 sklearn==0.0
 Werkzeug==2.0.1
 h5py==3.1.0
-tensorflow==2.2.0
+tensorflow==2.4
